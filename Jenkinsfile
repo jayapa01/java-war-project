@@ -17,7 +17,7 @@ pipeline {
     }
     
     stage('deployment on tomcat') {
-      agent { label 'tomcat-deploy' }
+      agent { label 'devops' }
       steps {
         sh """
              wget --http-user=${jfrog_user}  --http-password=${jfrog_pass} https://devops400.jfrog.io/artifactory/devops/com/mycompany/app/my-app-jp/2.0-SNAPSHOT/my-app-jp-2.0-20230316.063100-1.war
