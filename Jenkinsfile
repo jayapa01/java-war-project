@@ -21,7 +21,7 @@ pipeline {
       steps {
         sh """
              wget --http-user=${jfrog_user}  --http-password=${jfrog_pass} https://devops400.jfrog.io/artifactory/devops/com/mycompany/app/my-app-jp/2.0/my-app-jp-2.0-20230316.063100-1.war
-             cp my-app-jp-2.0-20230316.063100-1.war /home/rocky/tomcat/tomcat9/webapps/
+             cp my-app-jp-2.0-20230316.063100-1.war /home/rocky/tomcat9/webapps/
           """
       }
     }
