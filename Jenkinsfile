@@ -3,7 +3,7 @@ pipeline {
   parameters { string(name: 'jfrog_user', defaultValue: '', description: ' this is user name for jfrog') 
                string(name: 'jfrog_pass', defaultValue: '', description: ' this is password for jfrog') }
   environment {
-                MVN_HOME = "/tmp/maven3.9"
+                MVN_HOME = "/tmp/maven3.9/"
                      
             }
   
@@ -12,7 +12,7 @@ pipeline {
     stage('build code and push code to artifact repo ') {
       agent { label 'devops' }
       steps {
-        sh "export PATH=$PATH:${env.MVN_HOME}/bin && mvn clean deploy"
+        sh "export PATH=$PATH:${env.MVN_HOME}/bin && mvn clean deploy -s /tmp/maven3.9/conf/settings.xml"
       }
     }
     
