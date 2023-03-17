@@ -12,7 +12,7 @@ pipeline {
     stage('build code and push code to artifact repo ') {
       agent { label 'jenkin-azure' }
       steps {
-        sh "export PATH=$PATH:${env.MVN_HOME}/bin && mvn clean deploy -s /tmp/maven3.9/conf/settings.xml"
+        sh "export PATH=$PATH:${env.MVN_HOME}/bin && mvn clean deploy"
       }
     }
     
